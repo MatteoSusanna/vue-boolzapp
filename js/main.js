@@ -179,8 +179,18 @@ var app = new Vue({
                         status: 'sent'
             }
 
-            this.contacts[this.counter].messages.push(newMessage)
-            this.myMessage = ''
+            this.contacts[this.counter].messages.push(newMessage);
+            setTimeout(this.push,1000); 
+            
+        },
+        push(){
+            let risposta = {
+                date: '10/01/2020 15:50:00',
+                message: 'Ok',
+                status: 'received'
+            }
+
+            this.contacts[this.counter].messages.push(risposta);
         }
-    }
+    },
   })
