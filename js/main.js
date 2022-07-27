@@ -173,14 +173,19 @@ var app = new Vue({
             this.counter = indice
         },
         pushInput(){
-            let newMessage = {
-                        date: '10/01/2020 15:50:00',
-                        message: this.myMessage,
-                        status: 'sent'
+            if(this.myMessage.trim() == ''){
+
+            }else{
+                let newMessage = {
+                    date: '10/01/2020 15:50:00',
+                    message: this.myMessage,
+                    status: 'sent'
+                }
+                this.contacts[this.counter].messages.push(newMessage);
+                this.myMessage = ''
+                setTimeout(this.push,1000); 
             }
-            this.contacts[this.counter].messages.push(newMessage);
-            this.myMessage = ''
-            setTimeout(this.push,1000); 
+            
             
         },
         push(){
@@ -189,8 +194,7 @@ var app = new Vue({
                 message: 'Ok',
                 status: 'received'
             }
-
-            this.contacts[this.counter].messages.push(risposta);
+        this.contacts[this.counter].messages.push(risposta);        
         }
     },
   })
