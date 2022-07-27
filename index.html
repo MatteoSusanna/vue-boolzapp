@@ -43,13 +43,13 @@
 
                                 <div class="container-avatar">
 
-                                    <div class="box-avatar" v-for="(element, indice) in contacts">
+                                    <div class="box-avatar" v-for="(card, indice) in contacts">
                                         <div class="avatar mr">
                                             <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
                                         </div>
                                         <div class="nome-avatar">
-                                            <div>{{contacts[indice].nome}}</div>
-                                            <div>Ultimo messagio inviato</div>
+                                            <div>{{contacts[indice].name}}</div>
+                                            <div>Ultimo messaggio inviato</div>
                                         </div>
                                     </div>
 
