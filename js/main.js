@@ -169,16 +169,18 @@ var app = new Vue({
     },
     methods: {
         apriChat(indice){
+            this.myMessage = ''
             this.counter = indice
         },
         pushInput(){
-            let newMessage ={
+            let newMessage = {
                         date: '10/01/2020 15:50:00',
                         message: this.myMessage,
                         status: 'sent'
             }
 
             this.contacts[this.counter].messages.push(newMessage)
+            this.myMessage = ''
         }
     }
   })

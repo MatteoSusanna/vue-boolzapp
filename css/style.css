@@ -28,6 +28,10 @@ i{
     color: #6b7376;
 }
 
+i:hover{
+    transform: scale(1.4);
+}
+
 .mb{
     margin-bottom: 5px;
 }
