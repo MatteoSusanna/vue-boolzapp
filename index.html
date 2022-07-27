@@ -43,7 +43,7 @@
 
                                 <div class="container-avatar">
 
-                                    <div class="box-avatar" v-for="(card, indice) in contacts">
+                                    <div class="box-avatar" v-for="(card, indice) in contacts" @click="apriChat(indice)">
                                         <div class="avatar mr">
                                             <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
                                         </div>
@@ -62,8 +62,8 @@
                             <!--header barra destra-->
                             <div class="header-message">
                                 <div class="avatar">
-                                    <img src="img/avatar_io.jpg" alt="">
-                                    <span>Michele</span>
+                                    <img :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat">
+                                    <span>{{contacts[counter].name}}</span>
                                 </div>
                                 <div class="options">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -75,7 +75,7 @@
                             <!--main barra destra-->
                             <div class="main-message">
                                 <div class="received mb">
-                                    <div class="message-received">Ricevutiiiiiii</div>
+                                    <div class="message-received">ricevuti</div>
                                 </div>
                                 <div class="sent mb">
                                     <div class="message-sent">inviati</div>
