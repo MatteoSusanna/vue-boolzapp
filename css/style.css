@@ -40,6 +40,10 @@ i:hover{
     margin-right: 10px;
 }
 
+.color-white{
+    color: white;
+}
+
 
 /*struttura base*/
 .container{
@@ -106,14 +110,21 @@ main .bar-bot{
     border-radius: 50%;
 }
 
+/*barra notifiche*/
+.notifiche{
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
 /*gestione avatar*/
 .container-avatar{
-    height: calc(100% - 47px);
+    height: calc(100% - 121px);
     overflow: hidden;
     overflow-y: scroll;
 }
 .container-avatar .box-avatar{
-    height: 20%;
     display: flex;
     align-items: center;
     padding: 20px;
@@ -129,12 +140,12 @@ main .bar-bot{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    border-top: 1px solid black;
     background-color: var(--header_wrapper);
 }
 
 .input-box input{
-    width: 60%;
+    width: 80%;
+    height: 100%;
     padding: 10px;
 }
 
