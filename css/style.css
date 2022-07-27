@@ -28,6 +28,14 @@ i{
     color: #6b7376;
 }
 
+.mb{
+    margin-bottom: 5px;
+}
+
+.mr{
+    margin-right: 10px;
+}
+
 
 /*struttura base*/
 .container{
@@ -122,6 +130,19 @@ main .bar-bot{
 
 }
 
+/*gestione avatar*/
+.container-avatar .box-avatar{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.box-avatar:hover{
+    background-color: #e9ebeb;
+}
+
+
 
 /*gestione barra di destra*/
     /*header*/
@@ -145,22 +166,35 @@ main .bar-bot{
 .main-message{
     height: 80%;
     padding: 20px;
-    background-image: url(../img/mine.jpg);
+    background-image: url(../img/mine.jpg);    
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+}
+
+.received{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sent{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .message-sent{
     background-color: var(--message_sent);
     border-radius: 10px;
     padding: 10px;
+
 }
 
 .message-received{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
+
 }
 
 
