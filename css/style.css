@@ -60,6 +60,7 @@ main .bar-bot{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 99;
 }
 
 .wrapper .bar-left{
@@ -101,6 +102,23 @@ main .bar-bot{
     border-radius: 50%;
 }
 
+/*gestione avatar*/
+.container-avatar{
+    height: calc(100% - 47px);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.container-avatar .box-avatar{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.box-avatar:hover{
+    background-color: #e9ebeb;
+}
+
 /*gestione input-box*/
 .input-box{
     display: flex;
@@ -128,18 +146,6 @@ main .bar-bot{
     height: 25px;
     border: 1px solid lightgrey;
 
-}
-
-/*gestione avatar*/
-.container-avatar .box-avatar{
-    height: 20%;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-.box-avatar:hover{
-    background-color: #e9ebeb;
 }
 
 
