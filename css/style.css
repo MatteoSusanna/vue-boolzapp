@@ -168,6 +168,7 @@ main .bar-bot{
     padding: 20px;
     background-image: url(../img/mine.jpg);    
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
 }
 
