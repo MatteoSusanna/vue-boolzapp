@@ -75,13 +75,10 @@
                             <!--main barra destra-->
                             <div class="main-message">
 
-                                <div class="received mb" v-for="(ricevuti, indice) in contacts">
-                                    <div class="message-received"></div>
+                                <div :class="(elementMessage.status == sent)?'sent':'received'" v-for="(elementMessage, indice) in contacts[counter].messages">
+                                    <div :class="(elementMessage.status == sent)?'message-sent':'message-received'">{{elementMessage.message}}</div>
                                 </div>
 
-                                <div class="sent mb" v-for="(ricevuti, indice) in contacts">
-                                    <div class="message-sent"></div>
-                                </div>
  
 
                             </div>
