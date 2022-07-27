@@ -178,8 +178,8 @@ var app = new Vue({
                         message: this.myMessage,
                         status: 'sent'
             }
-
             this.contacts[this.counter].messages.push(newMessage);
+            this.myMessage = ''
             setTimeout(this.push,1000); 
             
         },
