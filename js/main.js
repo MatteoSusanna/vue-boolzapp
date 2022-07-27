@@ -87,7 +87,7 @@ var app = new Vue({
                 ],
             },
             {
-                name: 'Alessandro L.',
+                name: 'Ilaria',
                 avatar: '_5',
                 visible: true,
                 messages: [
@@ -164,7 +164,7 @@ var app = new Vue({
                             }
                 ],
             }
-        ],     
+        ], 
     },
     methods: {
         apriChat(indice){

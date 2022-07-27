@@ -27,10 +27,10 @@
                         <div class="bar-left">
                             
                             <div class="header-avatar">
-                                <div class="avatar">
+                                <div class="avatar mr">
                                     <img src="img/avatar_io.jpg" alt="il mio avatar">
                                 </div>
-                                <span>Matteo</span>
+                                <h4>Matteo</h4>
                             </div>
 
                             <div class="search-message">
@@ -48,7 +48,7 @@
                                             <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
                                         </div>
                                         <div class="nome-avatar">
-                                            <div>{{contacts[indice].name}}</div>
+                                            <h4>{{contacts[indice].name}}</h4>
                                             <div>Ultimo messaggio inviato</div>
                                         </div>
                                     </div>
@@ -62,8 +62,8 @@
                             <!--header barra destra-->
                             <div class="header-message">
                                 <div class="avatar">
-                                    <img :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat">
-                                    <span>{{contacts[counter].name}}</span>
+                                    <img class="mr" :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat">
+                                    <h4>{{contacts[counter].name}}</h4>
                                 </div>
                                 <div class="options">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -74,12 +74,16 @@
 
                             <!--main barra destra-->
                             <div class="main-message">
-                                <div class="received mb">
-                                    <div class="message-received">ricevuti</div>
+
+                                <div class="received mb" v-for="(ricevuti, indice) in contacts">
+                                    <div class="message-received"></div>
                                 </div>
-                                <div class="sent mb">
-                                    <div class="message-sent">inviati</div>
-                                </div>                            
+
+                                <div class="sent mb" v-for="(ricevuti, indice) in contacts">
+                                    <div class="message-sent"></div>
+                                </div>
+ 
+
                             </div>
 
                             <!--footer barra destra-->
