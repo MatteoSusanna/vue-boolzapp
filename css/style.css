@@ -41,7 +41,7 @@ i{
 }
 
 .d-none{
-    display: none;
+    display: none !important ;
 }
 
 .d-block{
@@ -94,7 +94,6 @@ main .bar-bot{
     width: 80%;
     height: 100%;
 }
-
 
 /*contenitore principale*/
 .wrapper .header-avatar{

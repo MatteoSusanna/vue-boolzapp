@@ -205,15 +205,14 @@ var app = new Vue({
         },
 
         filtraggio(){
-           let array = this.contacts[this.counter].filter((contact) =>{
+            this.ricerca = this.ricerca.charAt(0).toUpperCase() + this.ricerca.slice(1).toLowerCase(1)
+            this.contacts.forEach((contact) =>{
                 if(contact.name.includes(this.ricerca)){
-                   return true
-
+                   contact.visible = true
+                }else{
+                    contact.visible = false
                 }
-                return false
-                
-            })
-            this.contacts = array
-        } 
+            })  
+        },
     },
   })

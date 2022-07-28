@@ -20,103 +20,103 @@
                </header>
 
                <main>
-                <div class="bar-bot">
+                    <div class="bar-bot">
 
-                    <div class="wrapper">
-                        <!--barra di sinistra-->
-                        <div class="bar-left">
-                            
-                            <div class="header-avatar">
-                                <div class="avatar mr">
-                                    <img src="img/avatar_io.jpg" alt="il mio avatar">
-                                </div>
-                                <h4>Matteo</h4>
-                            </div>
-
-                            <div class="notifiche">
-                                <i class="fa-solid fa-bell-slash fa-2x mr color-white"></i>
-                                <div>
-                                    <div>Ricevi notifiche</div>
-                                    <div>Notifiche descktop</div>
-                                </div>
-                            </div>
-
-                            <div class="search-message">
-                                <div class="input-box">
-                                    <div class="search">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </div>
-                                    <input type="text" placeholder="Cerca o inizia una nuova chat" 
-                                        v-model="ricerca" @keyup.enter="filtraggio()">
-                                </div>
-
-                                <div class="container-avatar">
-
-                                    <div class="box-avatar" v-for="(card, indice) in contacts"
-                                         @click="apriChat(indice)" :class="(indice == counter)?'bg_grey': ''">
-                                        <div class="avatar mr">
-                                            <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
-                                        </div>
-                                        <div class="nome-avatar">
-                                            <div class="nome-ora">
-                                                <h4>{{contacts[indice].name}}</h4>
-                                                <div>{{data(indice).slice(0, 5)}}</div>
-                                            </div>
-                                            <div>Ultimo messaggio inviato</div>
-                                            
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--barra di destra-->
-                        <div class="bar-right">
-                            <!--header barra destra-->
-                            <div class="header-message">
-                                <div class="wrapper-avatar">
-                                    <div class="avatar">
-                                        <img class="mr" :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat"> 
-                                    </div>
-                                    <div class="ultimo-accesso">
-                                        <h4>{{contacts[counter].name}}</h4>
-                                        <span>Ultimo accesso {{data(counter).slice(0, 5)}}</span>
-                                    </div>
-
-                                </div>
+                        <div class="wrapper">
+                            <!--barra di sinistra-->
+                            <div class="bar-left">
                                 
-                                <div class="options">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    <i class="fa-solid fa-paperclip prl"></i>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <div class="header-avatar">
+                                    <div class="avatar mr">
+                                        <img src="img/avatar_io.jpg" alt="il mio avatar">
+                                    </div>
+                                    <h4>Matteo</h4>
+                                </div>
+
+                                <div class="notifiche">
+                                    <i class="fa-solid fa-bell-slash fa-2x mr color-white"></i>
+                                    <div>
+                                        <div>Ricevi notifiche</div>
+                                        <div>Notifiche descktop</div>
+                                    </div>
+                                </div>
+
+                                <div class="search-message">
+                                    <div class="input-box">
+                                        <div class="search">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                        <input type="text" placeholder="Cerca o inizia una nuova chat" 
+                                            v-model="ricerca" @keyup.enter="filtraggio()">
+                                    </div>
+
+                                    <div class="container-avatar">
+
+                                        <div class="box-avatar" v-for="(card, indice) in contacts"
+                                            @click="apriChat(indice)" :class="{bg_grey : indice == counter, 'd-none' : card.visible == false} ">
+                                            <div class="avatar mr">
+                                                <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
+                                            </div>
+                                            <div class="nome-avatar">
+                                                <div class="nome-ora">
+                                                    <h4>{{contacts[indice].name}}</h4>
+                                                    <div>{{data(indice).slice(0, 5)}}</div>
+                                                </div>
+                                                <div>Ultimo messaggio inviato</div>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
 
-                            <!--main barra destra-->
-                            <div class="main-message">
+                            <!--barra di destra-->
+                            <div class="bar-right">
+                                <!--header barra destra-->
+                                <div class="header-message">
+                                    <div class="wrapper-avatar">
+                                        <div class="avatar">
+                                            <img class="mr" :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat"> 
+                                        </div>
+                                        <div class="ultimo-accesso">
+                                            <h4>{{contacts[counter].name}}</h4>
+                                            <span>Ultimo accesso {{data(counter).slice(0, 5)}}</span>
+                                        </div>
 
-                                    <div :class="(elementMessage.status == 'sent')?'sent mb':'received mb'" v-for="(elementMessage, indice) in contacts[counter].messages">
-                                        <div class="mr" :class="(elementMessage.status == 'sent')?'message-sent':'message-received'">
-                                            {{elementMessage.message}}
-                                            <div class="ora-messaggi">
-                                                {{data(indice).slice(0, 5)}}
+                                    </div>
+                                    
+                                    <div class="options">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-paperclip prl"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+
+                                <!--main barra destra-->
+                                <div class="main-message">
+
+                                        <div :class="(elementMessage.status == 'sent')?'sent mb':'received mb'" v-for="(elementMessage, indice) in contacts[counter].messages">
+                                            <div class="mr" :class="(elementMessage.status == 'sent')?'message-sent':'message-received'">
+                                                {{elementMessage.message}}
+                                                <div class="ora-messaggi">
+                                                    {{data(indice).slice(0, 5)}}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                            </div>
+                                </div>
 
-                            <!--footer barra destra-->
-                            <div class="message-to-sent">
-                                <i class="fa-solid fa-face-smile"></i>
-                                <input type="text" placeholder="Scrivi un messaggio" v-model="myMessage" @keyup.enter="pushInput">
-                                <i class="fa-solid fa-microphone"></i>
+                                <!--footer barra destra-->
+                                <div class="message-to-sent">
+                                    <i class="fa-solid fa-face-smile"></i>
+                                    <input type="text" placeholder="Scrivi un messaggio" v-model="myMessage" @keyup.enter="pushInput">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
                             </div>
-
                         </div>
-                   </div>
+                    </div>
 
-                </div>
+                    
                </main>
                
 
