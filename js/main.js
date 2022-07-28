@@ -207,10 +207,10 @@ var app = new Vue({
         filtraggio(){
            let array = this.contacts[this.counter].filter((contact) =>{
                 if(contact.name.includes(this.ricerca)){
-                   return this.contacts[this.counter].visible = true
+                   return true
 
                 }
-                return this.contacts[this.counter].visible = false
+                return false
                 
             })
             this.contacts = array
