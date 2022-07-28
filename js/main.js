@@ -2,7 +2,9 @@ var app = new Vue({
     el: '#app',
     data: {
         counter: 0,
+        counter_2: 0,
         myMessage: '',
+        ricerca: '',
         contacts: [
             {
                 name: 'Michele',
@@ -196,6 +198,21 @@ var app = new Vue({
             }
         this.contacts[this.counter].messages.push(risposta);        
         },
+        data(indice){
+            let data = this.contacts[indice].messages[this.counter_2].date.split(' ');
+
+            return data[1]
+        }
+        /*
+        filtraggio(){
+            this.contacts[this.counter].nome.filter((nome) =>{
+                if(nome.split('') == this.ricerca.split('')){
+                   return this.contacts[this.counter].visible = true
+                }
+                return this.contacts[this.counter].visible = false
+            })
+        }
+        */
         
     },
   })

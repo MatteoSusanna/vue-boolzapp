@@ -142,6 +142,15 @@ main .bar-bot{
     padding: 20px;
 }
 
+.nome-avatar{
+    width: 100%;
+}
+
+.nome-ora{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /*gestione input-box*/
 .input-box{
@@ -191,6 +200,11 @@ main .bar-bot{
 
 }
 
+.wrapper-avatar{
+    display: flex;
+    align-items: center;
+}
+
 /*main*/
 
 .main-message{
@@ -224,6 +238,12 @@ main .bar-bot{
     border-radius: 10px;
     padding: 10px;
 
+}
+
+.ora-messaggi{
+    font-size: 13px;
+    text-align: right;
+    margin-top: 5px;
 }
 
 .menu_tendina{
