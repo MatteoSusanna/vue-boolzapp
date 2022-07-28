@@ -20,6 +20,10 @@ body{
 }
 
 /*generale*/
+li{
+    list-style: none;
+}
+
 .prl{
     padding: 0 10px;
 }
@@ -28,16 +32,24 @@ i{
     color: #6b7376;
 }
 
-i:hover{
-    transform: scale(1.4);
-}
-
 .mb{
     margin-bottom: 5px;
 }
 
 .mr{
     margin-right: 10px;
+}
+
+.d-none{
+    display: none;
+}
+
+.d-block{
+    display: block;
+}
+
+.bg_grey{
+    background-color: #e9ebeb;
 }
 
 .color-white{
@@ -130,9 +142,6 @@ main .bar-bot{
     padding: 20px;
 }
 
-.box-avatar:hover{
-    background-color: #e9ebeb;
-}
 
 /*gestione input-box*/
 .input-box{
@@ -188,7 +197,6 @@ main .bar-bot{
     height: 80%;
     padding: 20px;
     background-image: url(../img/mine.jpg);
-  
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -216,6 +224,11 @@ main .bar-bot{
     border-radius: 10px;
     padding: 10px;
 
+}
+
+.menu_tendina{
+    background-color: #e9ebeb;
+    padding: 10px;
 }
 
 

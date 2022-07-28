@@ -51,7 +51,7 @@
 
                                 <div class="container-avatar">
 
-                                    <div class="box-avatar" v-for="(card, indice) in contacts" @click="apriChat(indice)">
+                                    <div class="box-avatar" :class="(indice == counter)?'bg_grey': '' " v-for="(card, indice) in contacts" @click="apriChat(indice)">
                                         <div class="avatar mr">
                                             <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
                                         </div>
@@ -84,7 +84,9 @@
                             <div class="main-message">
 
                                     <div :class="(elementMessage.status == 'sent')?'sent mb':'received mb'" v-for="elementMessage in contacts[counter].messages">
-                                        <div :class="(elementMessage.status == 'sent')?'message-sent':'message-received'">{{elementMessage.message}}</div>
+                                        <div class="mr" :class="(elementMessage.status == 'sent')?'message-sent':'message-received'">
+                                            {{elementMessage.message}}
+                                        </div>
                                     </div>
                             </div>
 

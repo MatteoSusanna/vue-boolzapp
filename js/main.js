@@ -195,6 +195,7 @@ var app = new Vue({
                 status: 'received'
             }
         this.contacts[this.counter].messages.push(risposta);        
-        }
+        },
+        
     },
   })
