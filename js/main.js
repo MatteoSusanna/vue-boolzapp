@@ -2,7 +2,6 @@ var app = new Vue({
     el: '#app',
     data: {
         counter: 0,
-        counter_2: 0,
         myMessage: '',
         ricerca: '',
         contacts: [
@@ -186,8 +185,10 @@ var app = new Vue({
                 setTimeout(this.push,1000); 
             }
         },
-        
 
+        random(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
 
         push(){
             let risposta = {
@@ -196,14 +197,10 @@ var app = new Vue({
                 status: 'received'
             }
 
+            let arrayRisp = ['Non lo so', 'Va bene', 'certo', 'Come vuoi', 'Ho da fare', 'No']
+            risposta.message = arrayRisp[this.random(0, 5)]
+
             this.contacts[this.counter].messages.push(risposta);        
-        },
-
-        //gestione data ora
-        data(indice){
-            let data = this.contacts[indice].messages[this.counter_2].date.split(' ');
-
-            return data[1]
         },
 
         //filtraggio contatti

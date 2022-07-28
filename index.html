@@ -60,7 +60,7 @@
                                             <div class="nome-avatar">
                                                 <div class="nome-ora">
                                                     <h4>{{contacts[indice].name}}</h4>
-                                                    <div>{{data(indice).slice(0, 5)}}</div>
+                                                    <div></div>
                                                 </div>
                                                 <div>Ultimo messaggio inviato</div>
                                                 
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="ultimo-accesso">
                                             <h4>{{contacts[counter].name}}</h4>
-                                            <span>Ultimo accesso {{data(counter).slice(0, 5)}}</span>
+                                            <span></span>
                                         </div>
 
                                     </div>
@@ -100,7 +100,7 @@
                                             <div class="mr" :class="(elementMessage.status == 'sent')?'message-sent':'message-received'">
                                                 {{elementMessage.message}}
                                                 <div class="ora-messaggi">
-                                                    {{data(indice).slice(0, 5)}}
+                                                    
                                                 </div>
                                             </div>
                                         </div>
