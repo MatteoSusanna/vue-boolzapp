@@ -175,9 +175,7 @@ var app = new Vue({
             this.counter = indice
         },
         pushInput(){
-            if(this.myMessage.trim() == ''){
-
-            }else{
+            if(!this.myMessage.trim() == ''){
                 let newMessage = {
                     date: '10/01/2020 15:50:00',
                     message: this.myMessage,
@@ -187,25 +185,31 @@ var app = new Vue({
                 this.myMessage = ''
                 setTimeout(this.push,1000); 
             }
-            
-            
         },
+        
+
+
         push(){
             let risposta = {
                 date: '10/01/2020 15:50:00',
-                message: 'Ok',
+                message: 'ok',
                 status: 'received'
             }
-        this.contacts[this.counter].messages.push(risposta);        
+
+            this.contacts[this.counter].messages.push(risposta);        
         },
+
+        //gestione data ora
         data(indice){
             let data = this.contacts[indice].messages[this.counter_2].date.split(' ');
 
             return data[1]
         },
 
+        //filtraggio contatti
         filtraggio(){
             this.ricerca = this.ricerca.charAt(0).toUpperCase() + this.ricerca.slice(1).toLowerCase(1)
+            
             this.contacts.forEach((contact) =>{
                 if(contact.name.includes(this.ricerca)){
                    contact.visible = true
