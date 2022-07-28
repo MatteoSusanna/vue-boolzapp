@@ -202,17 +202,19 @@ var app = new Vue({
             let data = this.contacts[indice].messages[this.counter_2].date.split(' ');
 
             return data[1]
-        }
-        /*
+        },
+
         filtraggio(){
             this.contacts[this.counter].nome.filter((nome) =>{
-                if(nome.split('') == this.ricerca.split('')){
+                if(nome.match(this.ricerca)){
+                    console.log(nome)
+                    console.log(this.ricerca)
                    return this.contacts[this.counter].visible = true
                 }
                 return this.contacts[this.counter].visible = false
             })
         }
-        */
+
         
     },
   })
