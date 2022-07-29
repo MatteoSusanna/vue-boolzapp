@@ -205,7 +205,6 @@ var app = new Vue({
                 ],
             }
         ], 
-
         arrayEmoticon:[ '⌚', '✋', '✌','⭐','😂','😈','😎','😘','😜','😡','👍','😇' ],
     },
     methods: {
@@ -237,7 +236,7 @@ var app = new Vue({
                 status: 'received'
             };
 
-            let arrayRisp = ['Non lo so', 'Va bene', 'certo', 'Come vuoi', 'Ho da fare', 'No'];
+            let arrayRisp = ['Non lo so 😇', 'Va bene 👍', 'certo ✌', 'Come vuoi 😈', 'Ho da fare ⌚', 'No 😡'];
             risposta.message = arrayRisp[this.random(0, 5)];
 
             this.contacts[this.counter].messages.push(risposta);        
