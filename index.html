@@ -51,7 +51,7 @@
                                 
                                 <div class="input-box">
                                     <div class="search">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-magnifying-glass" @click="filtraggio()"></i>
                                     </div>
                                     <input type="text" placeholder="Cerca o inizia una nuova chat" 
                                         v-model="ricerca" @keyup.enter="filtraggio()">
