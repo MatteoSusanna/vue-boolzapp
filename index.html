@@ -31,7 +31,11 @@
                                     <div class="avatar mr">
                                         <img src="img/avatar_io.jpg" alt="il mio avatar">
                                     </div>
-                                    <h4>Matteo</h4>
+                                    <div>
+                                        <h4>Matteo</h4>
+                                        <h4>Ultimo accesso {{tempoReale().slice(11, 16)}}</h4>
+
+                                    </div>
                                 </div>
 
                                 <div class="notifiche">
@@ -77,9 +81,9 @@
                                 <div class="header-message">
                                     <div class="wrapper-avatar">
                                         <div class="avatar">
-                                            <img class="mr" :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat"> 
+                                            <img :src=" 'img/avatar' + contacts[counter].avatar + '.jpg'" alt="avatar chat"> 
                                         </div>
-                                        <div class="ultimo-accesso">
+                                        <div class="ultimo-accesso ml">
                                             <h4>{{contacts[counter].name}}</h4>
                                             <span></span>
                                         </div>
@@ -103,10 +107,11 @@
                                                 <div class="ora-messaggi">
                                                     {{elementMessage.date.slice(11, 16)}}
                                                 </div>
+                                                <ul :class="(elementMessage.show == true)?'d-none':'d-block'" class="menu_tendina">
+                                                    <li @click="eliminaMessaggio(indice)"><i class="fa-solid fa-trash-can"></i>Elimina</li>
+                                                </ul>
                                             </div>
-                                            <ul :class="(elementMessage.show == true)?'d-none':'d-block'" class="menu_tendina">
-                                                <li @click="eliminaMessaggio(indice)">Elimina</li>
-                                            </ul>
+                                            
                                         </div>
                                 </div>
 

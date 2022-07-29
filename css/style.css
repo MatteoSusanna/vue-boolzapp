@@ -40,6 +40,10 @@ i{
     margin-right: 10px;
 }
 
+.ml{
+    margin-left: 10px;
+}
+
 .d-none{
     display: none !important ;
 }
@@ -229,13 +233,14 @@ main .bar-bot{
     background-color: var(--message_sent);
     border-radius: 10px;
     padding: 10px;
+    position: relative;
 }
 
 .message-received{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-
+    position: relative;
 }
 
 .ora-messaggi{
@@ -245,10 +250,16 @@ main .bar-bot{
 }
 
 .menu_tendina{
+    right: 17%;
+    top: 35px;
+    opacity: 0.8;
+    position: absolute;
     background-color: #e9ebeb;
+    height: 40px;
     padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
 }
-
 
 
 /*footer*/

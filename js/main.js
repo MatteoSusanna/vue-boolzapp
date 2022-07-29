@@ -209,7 +209,7 @@ var app = new Vue({
         pushInput(){
             if(!this.myMessage.trim() == ''){
                 let newMessage = {
-                    date: DateTime.now().toFormat('dd/LL/y HH:mm:ss'),
+                    date: this.tempoReale(),
                     show: true,
                     message: this.myMessage,
                     status: 'sent'
@@ -255,9 +255,15 @@ var app = new Vue({
         apriTendina(indice){
             this.contacts[this.counter].messages[indice].show = !this.contacts[this.counter].messages[indice].show;
         },
-
+        
+        //eliminazione messaggi
         eliminaMessaggio(indice){
             this.contacts[this.counter].messages.splice(indice, 1);
+        },
+
+        //gestione tempo reale
+        tempoReale(){
+            return DateTime.now().toFormat('dd/LL/y HH:mm:ss')
         }
 
     },
