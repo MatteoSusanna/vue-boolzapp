@@ -26,52 +26,49 @@
                             <!--barra di sinistra-->
                             <div class="bar-left">
 
+                                
+                                <div class="header-avatar">
+                                    <div class="avatar mr">
+                                        <img src="img/avatar_io.jpg" alt="il mio avatar">
+                                    </div>
+                                    <h4>Matteo</h4>
+                                </div>
+
+                                <div class="notifiche">
+                                    <i class="fa-solid fa-bell-slash fa-2x mr color-white"></i>
+                                    <div class="notifiche-text">
+                                        <div class="ricevi-notifiche">Ricevi notifiche</div>
+                                        <div>Notifiche descktop</div>
+                                    </div>
+                                </div>
                                
-                                    <div class="header-avatar">
+                                
+
+                                
+                                <div class="input-box">
+                                    <div class="search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat" 
+                                        v-model="ricerca" @keyup.enter="filtraggio()">
+                                </div>
+
+                                <div class="container-avatar">
+
+                                    <div class="box-avatar" v-for="(card, indice) in contacts"
+                                        @click="apriChat(indice)" :class="{bg_grey : indice == counter, 'd-none' : card.visible == false} ">
                                         <div class="avatar mr">
-                                            <img src="img/avatar_io.jpg" alt="il mio avatar">
+                                            <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
                                         </div>
-                                        <h4>Matteo</h4>
-                                    </div>
-
-                                    <div class="notifiche">
-                                        <i class="fa-solid fa-bell-slash fa-2x mr color-white"></i>
-                                        <div>
-                                            <div>Ricevi notifiche</div>
-                                            <div>Notifiche descktop</div>
-                                        </div>
-                                    </div>
-                               
-                                
-
-                                
-                                    <div class="input-box">
-                                        <div class="search">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </div>
-                                        <input type="text" placeholder="Cerca o inizia una nuova chat" 
-                                            v-model="ricerca" @keyup.enter="filtraggio()">
-                                    </div>
-
-                                    <div class="container-avatar">
-
-                                        <div class="box-avatar" v-for="(card, indice) in contacts"
-                                            @click="apriChat(indice)" :class="{bg_grey : indice == counter, 'd-none' : card.visible == false} ">
-                                            <div class="avatar mr">
-                                                <img :src=" 'img/avatar' + contacts[indice].avatar + '.jpg'" alt="il mio avatar">
+                                        <div class="nome-avatar">
+                                            <div class="nome-ora">
+                                                <h4>{{contacts[indice].name}}</h4>
+                                                <div></div>
                                             </div>
-                                            <div class="nome-avatar">
-                                                <div class="nome-ora">
-                                                    <h4>{{contacts[indice].name}}</h4>
-                                                    <div></div>
-                                                </div>
-                                                <div>Ultimo messaggio inviato</div>
-                                                
-                                            </div>
+                                            <div>Ultimo messaggio inviato</div>                                                
                                         </div>
-
                                     </div>
-                                
+                                </div>                                
                             </div>
 
                             <!--barra di destra-->
