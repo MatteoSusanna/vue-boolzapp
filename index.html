@@ -33,7 +33,7 @@
                                     </div>
                                     <div>
                                         <h4>Matteo</h4>
-                                        <h4>Ultimo accesso {{tempoReale().slice(11, 16)}}</h4>
+                                        <span>Ultimo accesso {{tempoReale().slice(11, 16)}}</span>
 
                                     </div>
                                 </div>
@@ -66,8 +66,8 @@
                                         </div>
                                         <div class="nome-avatar">
                                             <div class="nome-ora">
-                                                <h4>{{contacts[indice].name}}</h4>
-                                                <div></div>
+                                                <h4>{{card.name}}</h4>
+                                                <div>{{card.lastAccess}}</div>
                                             </div>
                                             <div>Ultimo messaggio inviato</div>                                                
                                         </div>
@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="ultimo-accesso ml">
                                             <h4>{{contacts[counter].name}}</h4>
-                                            <span></span>
+                                            <span>Ultimo accesso {{contacts[counter].lastAccess}}</span>
                                         </div>
 
                                     </div>

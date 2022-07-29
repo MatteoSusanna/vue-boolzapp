@@ -11,6 +11,7 @@ var app = new Vue({
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
+                lastAccess: '16:15',
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
@@ -37,6 +38,7 @@ var app = new Vue({
                 avatar: '_2',
                 show: true,
                 visible: true,
+                lastAccess: '16:35',
                 messages: [
                             {
                             date: '20/03/2020 16:30:00',
@@ -63,6 +65,7 @@ var app = new Vue({
                 avatar: '_3',
                 show: true,
                 visible: true,
+                lastAccess: '16:15',
                 messages: [
                             {
                             date: '28/03/2020 10:10:40',
@@ -89,6 +92,7 @@ var app = new Vue({
                 avatar: '_4',
                 show: true,
                 visible: true,
+                lastAccess: '15:50',
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
@@ -109,6 +113,7 @@ var app = new Vue({
                 avatar: '_5',
                 show: true,
                 visible: true,
+                lastAccess: '15:50',
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
@@ -129,6 +134,7 @@ var app = new Vue({
                 avatar: '_6',
                 show: true,
                 visible: true,
+                lastAccess: '15:51',
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
@@ -155,6 +161,7 @@ var app = new Vue({
                 avatar: '_7',
                 show: true,
                 visible: true,
+                lastAccess: '15:50',
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
@@ -175,6 +182,7 @@ var app = new Vue({
                 avatar: '_8',
                 show: true,
                 visible: true,
+                lastAccess: '15:51',
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
@@ -255,7 +263,7 @@ var app = new Vue({
         apriTendina(indice){
             this.contacts[this.counter].messages[indice].show = !this.contacts[this.counter].messages[indice].show;
         },
-        
+
         //eliminazione messaggi
         eliminaMessaggio(indice){
             this.contacts[this.counter].messages.splice(indice, 1);
