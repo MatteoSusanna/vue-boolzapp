@@ -1,3 +1,4 @@
+var DateTime = luxon.DateTime;
 var app = new Vue({
     el: '#app',
     data: {
@@ -178,14 +179,17 @@ var app = new Vue({
         ], 
     },
     methods: {
+        //messaggio barra sinistra = barra destra
         apriChat(indice){
             this.myMessage = ''
             this.counter = indice
         },
+
+        //push messaggio e risposta
         pushInput(){
             if(!this.myMessage.trim() == ''){
                 let newMessage = {
-                    date: '10/01/2020 15:50:00',
+                    date: DateTime.now().toFormat('dd/LL/y HH:mm:ss'),
                     message: this.myMessage,
                     status: 'sent'
                 }
@@ -194,23 +198,23 @@ var app = new Vue({
                 setTimeout(this.push,1000); 
             }
         },
+        push(){
+            let risposta = {
+                date: DateTime.now().toFormat('dd/LL/y HH:mm:ss'),
+                message: 'ok',
+                status: 'received'
+            };
 
+            let arrayRisp = ['Non lo so', 'Va bene', 'certo', 'Come vuoi', 'Ho da fare', 'No'];
+            risposta.message = arrayRisp[this.random(0, 5)];
+
+            this.contacts[this.counter].messages.push(risposta);        
+        },
         random(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
         },
 
-        push(){
-            let risposta = {
-                date: '10/01/2020 15:50:00',
-                message: 'ok',
-                status: 'received'
-            }
-
-            let arrayRisp = ['Non lo so', 'Va bene', 'certo', 'Come vuoi', 'Ho da fare', 'No']
-            risposta.message = arrayRisp[this.random(0, 5)]
-
-            this.contacts[this.counter].messages.push(risposta);        
-        },
+        
 
         //filtraggio contatti
         filtraggio(){
@@ -218,17 +222,16 @@ var app = new Vue({
             
             this.contacts.forEach((contact) =>{
                 if(contact.name.includes(this.ricerca)){
-                   contact.visible = true
+                   contact.visible = true;
                 }else{
-                    contact.visible = false
+                    contact.visible = false;
                 }
             })  
         },
 
+        //apertura tendina messaggi
         apriTendina(){
-
-            this.contact[this.counter].show = !this.contact[this.counter].show
-            
+            this.contact[this.counter].show = !this.contact[this.counter].show;
         }
 
     },
