@@ -5,7 +5,7 @@ var app = new Vue({
         counter: 0,
         myMessage: '',
         ricerca: '',
-        showSmile: true,
+        showSmile: false,
         contacts: [
             {
                 name: 'Michele',
@@ -206,20 +206,7 @@ var app = new Vue({
             }
         ], 
 
-        arrayEmoticon:[   
-                        '⌚', 
-                        '✋', 
-                        '✌',
-                        '⭐',
-                        '😂',
-                        '😈',
-                        '😎',
-                        '😘',
-                        '😜',
-                        '😡',
-                        '👍',
-                        '😇' 
-                    ],
+        arrayEmoticon:[ '⌚', '✋', '✌','⭐','😂','😈','😎','😘','😜','😡','👍','😇' ],
     },
     methods: {
         //messaggio barra sinistra = barra destra
