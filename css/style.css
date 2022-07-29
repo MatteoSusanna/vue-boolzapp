@@ -88,14 +88,14 @@ main .bar-bot{
 }
 
 .wrapper .bar-left{
-    width: 300px;
+    width: 400px;
     height: 100%;
     background-color: white;
     border: 1px solid lightgrey;
 }
 
 .wrapper .bar-right{
-    width: calc(100% - 300px);
+    width: calc(100% - 400px);
     height: 100%;
 }
 
