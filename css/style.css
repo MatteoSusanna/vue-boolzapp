@@ -88,14 +88,14 @@ main .bar-bot{
 }
 
 .wrapper .bar-left{
-    width: 30%;
+    width: 300px;
     height: 100%;
     background-color: white;
     border: 1px solid lightgrey;
 }
 
 .wrapper .bar-right{
-    width: 80%;
+    width: calc(100% - 300px);
     height: 100%;
 }
 
@@ -291,4 +291,50 @@ main .bar-bot{
     left: 20px;
     bottom: 50px;
     padding: 10px;
+}
+
+
+@media all and (max-width: 1200px){
+    .bar-top{
+        display: none;
+    }
+
+    main .bar-bot{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .wrapper{
+        height: 100vh;
+        width: 100%;
+    } 
+
+    .wrapper .bar-left{
+        width: 300px;
+        flex-shrink: 0;
+    }
+
+    .wrapper .bar-right{
+        width: calc(100% - 300px);
+    }
+}
+
+@media all and (max-width: 800px){
+
+
+    .oraAccesso{
+        display: none;
+    }
+    .wrapper .bar-left{
+        width: 200px;
+    }
+
+    .wrapper .bar-right{
+        width: calc(100% - 200px);
+    }
+
+    .options{
+        display: none;
+    }
+    
 }
