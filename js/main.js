@@ -10,21 +10,23 @@ var app = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
-                show: true,
                 visible: true,
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
+                            show: true,
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 15:50:00',
+                            show: true,
                             message: 'Ricordati di stendere i panni',
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 16:15:22',
+                            show: true,
                             message: 'Tutto fatto!',
                             status: 'received'
                             }
@@ -38,16 +40,19 @@ var app = new Vue({
                 messages: [
                             {
                             date: '20/03/2020 16:30:00',
+                            show: true,
                             message: 'Ciao come stai?',
                             status: 'sent'
                             },
                             {
                             date: '20/03/2020 16:30:55',
+                            show: true,
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received'
                             },
                             {
                             date: '20/03/2020 16:35:00',
+                            show: true,
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                             }
@@ -61,16 +66,19 @@ var app = new Vue({
                 messages: [
                             {
                             date: '28/03/2020 10:10:40',
+                            show: true,
                             message: 'La Marianna va in campagna',
                             status: 'received'
                             },
                             {
                             date: '28/03/2020 10:20:10',
+                            show: true,
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent'
                             },
                             {
                             date: '28/03/2020 16:15:22',
+                            show: true,
                             message: 'Ah scusa!',
                             status: 'received'
                             }
@@ -84,11 +92,13 @@ var app = new Vue({
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
+                            show: true,
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 15:50:00',
+                            show: true,
                             message: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                             }
@@ -102,11 +112,13 @@ var app = new Vue({
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
+                            show: true,
                             message: 'Ricordati di chiamare la nonna',
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 15:50:00',
+                            show: true,
                             message: 'Va bene, stasera la sento',
                             status: 'received'
                             }
@@ -120,16 +132,19 @@ var app = new Vue({
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
+                            show: true,
                             message: 'Ciao Claudia, hai novità?',
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 15:50:00',
+                            show: true,
                             message: 'Non ancora',
                             status: 'received'
                             },
                             {
                             date: '10/01/2020 15:51:00',
+                            show: true,
                             message: 'Nessuna nuova, buona nuova',
                             status: 'sent'
                             }
@@ -143,11 +158,13 @@ var app = new Vue({
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
+                            show: true,
                             message: 'Fai gli auguri a Martina che è il suo compleanno!',
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 15:50:00',
+                            show: true,
                             message: 'Grazie per avermelo ricordato, le scrivo subito!',
                             status: 'received'
                             }
@@ -161,16 +178,19 @@ var app = new Vue({
                 messages: [
                             {
                             date: '10/01/2020 15:30:55',
+                            show: true,
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
                             status: 'received'
                             },
                             {
                             date: '10/01/2020 15:50:00',
+                            show: true,
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                             status: 'sent'
                             },
                             {
                             date: '10/01/2020 15:51:00',
+                            show: true,
                             message: 'OK!!',
                             status: 'received'
                             }
@@ -190,6 +210,7 @@ var app = new Vue({
             if(!this.myMessage.trim() == ''){
                 let newMessage = {
                     date: DateTime.now().toFormat('dd/LL/y HH:mm:ss'),
+                    show: true,
                     message: this.myMessage,
                     status: 'sent'
                 }
@@ -202,6 +223,7 @@ var app = new Vue({
             let risposta = {
                 date: DateTime.now().toFormat('dd/LL/y HH:mm:ss'),
                 message: 'ok',
+                show: true,
                 status: 'received'
             };
 
@@ -230,8 +252,12 @@ var app = new Vue({
         },
 
         //apertura tendina messaggi
-        apriTendina(){
-            this.contact[this.counter].show = !this.contact[this.counter].show;
+        apriTendina(indice){
+            this.contacts[this.counter].messages[indice].show = !this.contacts[this.counter].messages[indice].show;
+        },
+
+        eliminaMessaggio(indice){
+            this.contacts[this.counter].messages.splice(indice, 1);
         }
 
     },

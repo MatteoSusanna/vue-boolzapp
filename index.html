@@ -99,13 +99,13 @@
                                         <div :class="(elementMessage.status == 'sent')?'sent mb':'received mb'" v-for="(elementMessage, indice) in contacts[counter].messages">
                                             <div class="mr" :class="(elementMessage.status == 'sent')?'message-sent':'message-received'">
                                                 {{elementMessage.message}}
-                                                <i class="fa-solid fa-chevron-down fa-sm" @click="apriTendina"></i>
+                                                <i class="fa-solid fa-chevron-down fa-sm" @click="apriTendina(indice)"></i>
                                                 <div class="ora-messaggi">
                                                     {{elementMessage.date.slice(11, 16)}}
                                                 </div>
                                             </div>
-                                            <ul :class="(contacts[counter].show == true)?'d-none':'d-block'" class="menu_tendina">
-                                                <li>Elimina</li>
+                                            <ul :class="(elementMessage.show == true)?'d-none':'d-block'" class="menu_tendina">
+                                                <li @click="eliminaMessaggio(indice)">Elimina</li>
                                             </ul>
                                         </div>
                                 </div>
