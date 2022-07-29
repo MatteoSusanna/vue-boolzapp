@@ -96,16 +96,13 @@ main .bar-bot{
 }
 
 /*contenitore principale*/
+
 .wrapper .header-avatar{
     display: flex;
     align-items: center;
     padding: 10px;
-    height: 10%;
+    height: 80px;
     background-color: var(--header_wrapper);
-}
-
-.wrapper .search-message{
-    height: 90%;
 }
 
 /*gestione mio avatar*/
@@ -124,6 +121,7 @@ main .bar-bot{
 /*barra notifiche*/
 .notifiche{
     background-color: #8edafc;
+    height: 80px;
     display: flex;
     align-items: center;
     padding: 20px;
@@ -131,7 +129,7 @@ main .bar-bot{
 
 /*gestione avatar*/
 .container-avatar{
-    height: calc(100% - 121px);
+    height: calc(100% - 220px);
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -153,6 +151,7 @@ main .bar-bot{
 
 /*gestione input-box*/
 .input-box{
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,7 +188,7 @@ main .bar-bot{
     align-items: center;
     justify-content: space-between;
     padding: 13px;
-    height: 10%;
+    height: 80px;
     background-color: var(--header_wrapper);;
 }
 
@@ -207,7 +206,7 @@ main .bar-bot{
 /*main*/
 
 .main-message{
-    height: 80%;
+    height: calc(100% - 160px);
     padding: 20px;
     background-image: url(../img/mine.jpg);
     overflow: hidden;
@@ -254,7 +253,7 @@ main .bar-bot{
 
 /*footer*/
 .message-to-sent{
-    height: 10%;
+    height: 80px;
     padding: 15px;
     background-color: var(--header_wrapper);;
     display: flex;
@@ -268,4 +267,3 @@ main .bar-bot{
     border: 1px solid lightgrey;
     padding: 10px;
 }
-

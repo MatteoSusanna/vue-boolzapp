@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        
         counter: 0,
         myMessage: '',
         ricerca: '',
@@ -8,6 +9,7 @@ var app = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -30,6 +32,7 @@ var app = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -52,6 +55,7 @@ var app = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -74,6 +78,7 @@ var app = new Vue({
             {
                 name: 'Alessandro B.',
                 avatar: '_4',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -91,6 +96,7 @@ var app = new Vue({
             {
                 name: 'Ilaria',
                 avatar: '_5',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -108,6 +114,7 @@ var app = new Vue({
             {
                 name: 'Claudia',
                 avatar: '_6',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -130,6 +137,7 @@ var app = new Vue({
             {
                 name: 'Federico',
                 avatar: '_7',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -147,6 +155,7 @@ var app = new Vue({
             {
                 name: 'Davide',
                 avatar: '_8',
+                show: true,
                 visible: true,
                 messages: [
                             {
@@ -215,5 +224,12 @@ var app = new Vue({
                 }
             })  
         },
+
+        apriTendina(){
+
+            this.contact[this.counter].show = !this.contact[this.counter].show
+            
+        }
+
     },
   })
