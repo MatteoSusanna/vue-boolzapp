@@ -117,7 +117,13 @@
 
                                 <!--footer barra destra-->
                                 <div class="message-to-sent">
-                                    <i class="fa-solid fa-face-smile"></i>
+                                    <i class="fa-solid fa-face-smile" @click="emoticon"></i>
+                                        <ul v-if="showSmile" class="emoticon" >
+                                            <li v-for="emoji in arrayEmoticon">
+                                                <span @click="myMessage = emoji">{{emoji}}</span>
+                                            </li>
+                                        </ul>
+                                    
                                     <input type="text" placeholder="Scrivi un messaggio" v-model="myMessage" @keyup.enter="pushInput">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>

@@ -2,10 +2,10 @@ var DateTime = luxon.DateTime;
 var app = new Vue({
     el: '#app',
     data: {
-        
         counter: 0,
         myMessage: '',
         ricerca: '',
+        showSmile: true,
         contacts: [
             {
                 name: 'Michele',
@@ -205,6 +205,21 @@ var app = new Vue({
                 ],
             }
         ], 
+
+        arrayEmoticon:[   
+                        '⌚', 
+                        '✋', 
+                        '✌',
+                        '⭐',
+                        '😂',
+                        '😈',
+                        '😎',
+                        '😘',
+                        '😜',
+                        '😡',
+                        '👍',
+                        '😇' 
+                    ],
     },
     methods: {
         //messaggio barra sinistra = barra destra
@@ -272,7 +287,13 @@ var app = new Vue({
         //gestione tempo reale
         tempoReale(){
             return DateTime.now().toFormat('dd/LL/y HH:mm:ss')
+        },
+
+        //emoticon
+        emoticon(){
+            this.showSmile = !this.showSmile
         }
+
 
     },
   })

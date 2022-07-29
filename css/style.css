@@ -261,7 +261,6 @@ main .bar-bot{
     border-radius: 10px;
 }
 
-
 /*footer*/
 .message-to-sent{
     height: 80px;
@@ -270,11 +269,26 @@ main .bar-bot{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .message-to-sent input{
     width: 90%;
     height: 100%;
     border: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.emoticon{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    opacity: 0.5;
+    height: 100px;
+    width: 150px;
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
     padding: 10px;
 }
